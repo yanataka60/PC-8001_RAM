@@ -1,5 +1,6 @@
 # PC-8001用増設32KRAMボード
 
+#### 画像は試作版です。公開版は、RAM読み出し、書き込みの状態を表示するLEDとフラットケーブル用取付用のパターンが付加されます。
 ![PC-8001_RAM](https://github.com/yanataka60/PC-8001_RAM/blob/main/jpeg/TITLE.jpg)
 
 　PC-8001の拡張端子に接続することで裏RAMとして使えるようになる32K増設RAMボードです。
