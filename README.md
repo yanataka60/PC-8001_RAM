@@ -1,6 +1,6 @@
 # PC-8001用増設32KRAMボード
 
-![PC-8001_RAM](https://github.com/yanataka60/PC-8001_SD/blob/main/JPEG/TITLE.jpg)
+![PC-8001_RAM](https://github.com/yanataka60/PC-8001_RAM/blob/main/jpeg/TITLE.jpg)
 
 　PC-8001の拡張端子に接続することで裏RAMとして使えるようになる32K増設RAMボードです。
 
