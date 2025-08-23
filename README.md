@@ -1,4 +1,4 @@
-# PC-8001用増設32KRAM BOARD
+# PC-8001用増設32KRAMボード
 
 ![PC-8001_SD](https://github.com/yanataka60/PC-8001_SD/blob/main/JPEG/TITLE.jpg)
 
@@ -21,24 +21,27 @@
 ## 回路図
 　KiCadフォルダ内のPC-8001_RAM.pdfを参照してください。
 
-[回路図](https://github.com/yanataka60/PC-8001_SD/blob/main/Kicad/PC-8001_SD.pdf)
+[回路図](https://github.com/yanataka60/PC-8001_RAM/blob/main/Kicad/PC-8001_RAM.pdf)
 
-![PC-8001_SD](https://github.com/yanataka60/PC-8001_SD/blob/main/Kicad/PC-8001_SD.jpg)
+![PC-8001_RAM](https://github.com/yanataka60/PC-8001_RAM/blob/main/Kicad/PC-8001_RAM_1.jpg)
 
 ## 部品
 |番号|品名|数量|備考|
 | ------------ | ------------ | ------------ | ------------ |
-|J1|2x25ボックスヘッダ|1|共立エレショップ JS-1200R-50など、秋月電子通商 PH-2x40RGなどのピンヘッダでも代用可(注1)(注5)|
-|J2|2x25ピンソケット|1||
+|J1|2x25ボックスヘッダ|1|共立エレショップ JS-1200R-50など、秋月電子通商 PH-2x40RGなどのピンヘッダでも代用可(注1)|
+|J2|2x25ピンソケット|1|秋月電子通商 FH-2X25SG又はFHU-2x42SGなど|
 |U1|GAL22V10|1||
 ||U2、U3のいずれか|||
-|U2|SRAM 62256|1||
-|U3|SRAM CY7C199|1||
+|U2|SRAM 62256|1|600mil(注2)|
+|U3|SRAM CY7C199|1|300mil(注2)|
 |C1,C2|積層セラミックコンデンサ 0.1uF|2||
 |C3|電解コンデンサ 16v100uF|1||
-|D1|5mm赤色LED|1|秋月電子通商 SS12D01G4など|
-|D1|5mm緑色LED|1|秋月電子通商 SS12D01G4など|
-|R1,R2|330Ω|21|秋月電子通商 IS-2235-Gなど|
+|D1|5mm赤色LED|1|秋月電子通商 OSDR5113Aなど|
+|D1|5mm緑色LED|1|秋月電子通商 OSPG5111Aなど|
+|R1,R2|330Ω|21||
+
+　　　注1)ピンヘッダで代用するときは、基板から若干浮かせてピンヘッダをハンダ付けするとフラットケーブをスムーズに抜き差しできます。
+　　　注2)U2(600mil対応)又はU3(300mil対応)のどちらか入手しやすいSRAMを使ってください。
 
 ## GALへの書込み
 　Wincuplフォルダ内のRAMBORAD.jedをROMライター(TL866II Plus等)を使ってGAL22V10に書き込みます。
