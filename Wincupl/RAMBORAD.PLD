@@ -1,0 +1,48 @@
+NAME		RAMBORAD;
+PARTNO	22V10;
+REVISION	A;
+DATE		25/8/15;
+DESIGNER	None;
+COMPANY   None;
+ASSEMBLY	None;
+LOCATION	None;
+DEVICE		G22V10;
+
+/* INPUTS... */
+Pin   1 = IOREQ;
+Pin   2 = MREQ;
+Pin   3 = A7;
+Pin   4 = A6;
+Pin   5 = A5;
+Pin   6 = A4;
+Pin   7 = A3;
+Pin   8 = A2;
+Pin   9 = A1;
+Pin  10 = A0;
+Pin  11 = D4;
+Pin  13 = D0;
+Pin  20 = A15;
+Pin  21 = RD;
+Pin  22 = WR;
+Pin  23 = RESET;
+
+/* OUTPUTS... */
+Pin  15 = CS;
+Pin  16 = WE;
+Pin  17 = LATCHRD;
+Pin  18 = LATCHWR;
+Pin  19 = ROMDS;
+
+/** Logic **/
+/* $E2 */
+E2 = !IOREQ & !WR & A7 & A6 & A5 & !A4 & !A3 & !A2 & A1 & !A0;
+RAMRD = E2 & D0;
+RAMWR = E2 & D4;
+ROMRD = E2 & !D0;
+ROMWR = E2 & !D4;
+LATCHRD = (LATCHRD # RAMRD) & !(ROMRD # !RESET);
+LATCHWR = (LATCHWR # RAMWR) & !(ROMWR # !RESET);
+CS = !(((LATCHRD & !RD) # (LATCHWR & !WR)) & !A15 & !MREQ);
+WE = !(LATCHWR & !WR & !MREQ & !A15);
+ROMDS = !LATCHRD;
+
