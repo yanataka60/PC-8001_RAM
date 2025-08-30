@@ -56,17 +56,17 @@
 
 　SRAM 62256相当品
 
-[62256](https://github.com/yanataka60/PC-8001_RAM/blob/main/jpeg/PC-8001RAM(3).JPG)
+![62256](https://github.com/yanataka60/PC-8001_RAM/blob/main/jpeg/PC-8001RAM(3).JPG)
 
 　SRAM CY7C199相当品
 
-[CY7C199](https://github.com/yanataka60/PC-8001_RAM/blob/main/jpeg/CY7C199.JPG)
+![CY7C199](https://github.com/yanataka60/PC-8001_RAM/blob/main/jpeg/CY7C199.JPG)
 
 ## 接続
 　PC-8001_SD Rev1.4に載せる場合は、PC-8001_RAMのJ2ピンソケットをPC-8001_SD Rev1.4のJ5ピンヘッダにそのままはめるだけです。
 
-[Rev1.4](https://github.com/yanataka60/PC-8001_RAM/blob/main/jpeg/PC-8001RAM(3).JPG)
+![Rev1.4](https://github.com/yanataka60/PC-8001_RAM/blob/main/jpeg/PC-8001RAM(3).JPG)
 
 　フラットケーブルで接続するときはボックスヘッダの1Pinマーク(基板の「J1」と書かれたマーク)を目印にしてフラットケーブルを接続します。
 
-[フラットケーブル](https://github.com/yanataka60/PC-8001_RAM/blob/main/jpeg/FLAT%20CABLE.JPG)
+![フラットケーブル](https://github.com/yanataka60/PC-8001_RAM/blob/main/jpeg/FLAT%20CABLE.JPG)
