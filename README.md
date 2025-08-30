@@ -1,6 +1,5 @@
 # PC-8001用増設32KRAMボード
 
-#### 画像は試作版です。公開版は、RAM読み出し、書き込みの状態を表示するLEDとフラットケーブル用取付用のパターンが付加されます。
 ![PC-8001_RAM](https://github.com/yanataka60/PC-8001_RAM/blob/main/jpeg/TITLE.jpg)
 
 　PC-8001の拡張端子に接続することで裏RAMとして使えるようになる32K増設RAMボードです。
@@ -55,7 +54,19 @@
 
 　SRAMは600mil、300milのどちらかを使います。画像ではテストのためU2(600mil)、U3(300mil)の両方にICソケットを取り付けていますが、使用するRAMに合わせてどちらかの取付で構いません。
 
+　SRAM 62256相当品
+
+https://github.com/yanataka60/PC-8001_RAM/blob/main/jpeg/PC-8001RAM(3).JPG
+
+　SRAM CY7C199相当品
+
+https://github.com/yanataka60/PC-8001_RAM/blob/main/jpeg/CY7C199.JPG
+
 ## 接続
 　PC-8001_SD Rev1.4に載せる場合は、PC-8001_RAMのJ2ピンソケットをPC-8001_SD Rev1.4のJ5ピンヘッダにそのままはめるだけです。
 
+https://github.com/yanataka60/PC-8001_RAM/blob/main/jpeg/PC-8001RAM(3).JPG
+
 　フラットケーブルで接続するときはボックスヘッダの1Pinマーク(基板の「J1」と書かれたマーク)を目印にしてフラットケーブルを接続します。
+
+https://github.com/yanataka60/PC-8001_RAM/blob/main/jpeg/FLAT%20CABLE.JPG
