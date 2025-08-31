@@ -7,37 +7,37 @@
                                 
 000000 9000                                 ORG     9000H
                                 
-000000 9000 210000          10              LD      HL,0000H
-000003 9003 110080          10              LD      DE,8000H
+000000 9000 210000          10              LD      HL,0000H    ;CHECK開始アドレス
+000003 9003 110080          10              LD      DE,8000H    ;CHECK終了アドレス+1
                                             
-000006 9006 CDCA5F          17  LOP1:       CALL    MONCLF
-000009 9009 CDC05E          17              CALL    MONDHL
-00000C 900C CDD45F          17              CALL    MONSPC
+000006 9006 CDCA5F          17  LOP1:       CALL    MONCLF      ;改行
+000009 9009 CDC05E          17              CALL    MONDHL      ;CHECKアドレス表示
+00000C 900C CDD45F          17              CALL    MONSPC      ;空白
                                 
-00000F 900F 3E55             7              LD      A,55H
-000011 9011 CD6F90          17              CALL    PRINTA
-000014 9014 CD6290          17              CALL    CHGRAM
-000017 9017 77               7              LD      (HL),A
-000018 9018 7E               7              LD      A,(HL)
-000019 9019 CD6990          17              CALL    CHGROM
-00001C 901C CD6F90          17              CALL    PRINTA
-00001F 901F FE55             7              CP      55H
-000021 9021 2021            12              JR      NZ,ERR
+00000F 900F 3E55             7              LD      A,55H       ;書込DATA
+000011 9011 CD6F90          17              CALL    PRINTA      ;書込DATA表示
+000014 9014 CD6290          17              CALL    CHGRAM      ;RAMへ切り替え
+000017 9017 77               7              LD      (HL),A      ;CHECK DATA 書込
+000018 9018 7E               7              LD      A,(HL)      ;CHECK DATA 読込
+000019 9019 CD6990          17              CALL    CHGROM      ;ROMへ切り替え
+00001C 901C CD6F90          17              CALL    PRINTA      ;読込DATA表示
+00001F 901F FE55             7              CP      55H         ;読込DATA比較
+000021 9021 2021            12              JR      NZ,ERR      ;一致しなければERR
                                             
-000023 9023 3EAA             7              LD      A,0AAH
-000025 9025 CD6F90          17              CALL    PRINTA
-000028 9028 CD6290          17              CALL    CHGRAM
-00002B 902B 77               7              LD      (HL),A
-00002C 902C 7E               7              LD      A,(HL)
-00002D 902D CD6990          17              CALL    CHGROM
-000030 9030 CD6F90          17              CALL    PRINTA
-000033 9033 FEAA             7              CP      0AAH
-000035 9035 200D            12              JR      NZ,ERR
+000023 9023 3EAA             7              LD      A,0AAH      ;書込DATA
+000025 9025 CD6F90          17              CALL    PRINTA      ;書込DATA表示
+000028 9028 CD6290          17              CALL    CHGRAM      ;RAMへ切り替え
+00002B 902B 77               7              LD      (HL),A      ;CHECK DATA 書込
+00002C 902C 7E               7              LD      A,(HL)      ;CHECK DATA 読込
+00002D 902D CD6990          17              CALL    CHGROM      ;ROMへ切り替え
+000030 9030 CD6F90          17              CALL    PRINTA      ;読込DATA表示
+000033 9033 FEAA             7              CP      0AAH        ;読込DATA比較
+000035 9035 200D            12              JR      NZ,ERR      ;一致しなければERR
                                             
-000037 9037 23               6              INC     HL
+000037 9037 23               6              INC     HL          ;CHECK開始アドレス+1
 000038 9038 E5              11              PUSH    HL
 000039 9039 A7               4              AND     A
-00003A 903A ED52            15              SBC     HL,DE
+00003A 903A ED52            15              SBC     HL,DE       ;CHECK開始アドレスがCHECK終了アドレス以下ならループ
 00003C 903C E1              10              POP     HL
 00003D 903D 20C7            12              JR      NZ,LOP1
 00003F 903F 214B90          10              LD      HL,MSG_OK
@@ -53,21 +53,21 @@
 000055 9055 52414D204552524F    MSG_ERR:    DB      'RAM ERROR!',0DH,0AH,00H
             52210D0A00          
                                 
-       9062                     CHGRAM:
+       9062                     CHGRAM:                         ;RAMへ切り替え
 000062 9062 F5              11              PUSH    AF
 000063 9063 3E11             7              LD      A,11H
 000065 9065 D3E2            11              OUT     (0E2H),A
 000067 9067 F1              10              POP     AF
 000068 9068 C9              10              RET
                                 
-       9069                     CHGROM:
+       9069                     CHGROM:                         ;ROMへ切り替え
 000069 9069 F5              11              PUSH    AF
 00006A 906A AF               4              XOR     A
 00006B 906B D3E2            11              OUT     (0E2H),A
 00006D 906D F1              10              POP     AF
 00006E 906E C9              10              RET
                                 
-       906F                     PRINTA:
+       906F                     PRINTA:                         ;Aレジスタの内容を16進数2桁で表示
 00006F 906F F5              11              PUSH    AF
 000070 9070 E5              11              PUSH    HL
 000071 9071 217E90          10              LD      HL,WORKA
