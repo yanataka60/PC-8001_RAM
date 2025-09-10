@@ -76,7 +76,7 @@
 ## RAMのテスト
 　RAMCHECKフォルダ内のramcheck.cmtを読み込み実行してください。0000h～7FFFhまでのRAMをCHECKできます。
 
-#### 2025.9.11 TL866ⅡPLUSで「Addr.Bus Open Circuit Test Error!」となる個体を発見できるよう改良しました。
+#### 　2025.9.11 TL866ⅡPLUSで「Addr.Bus Open Circuit Test Error!」となる個体を発見できるよう改良しました。
 
 ## 追記
 2025.8.31 ちくらっぺさん作8kBSRAMボードとの併用は出来ないことの追記及びRAMテストプログラムの追加。
