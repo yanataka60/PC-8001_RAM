@@ -6,11 +6,37 @@ MSGOUT		EQU		52EDH		;文字列の出力2
 
 			ORG		9000H
 
+;******** 事前にRAMに書き込み *********************
+			LD		HL,0000H	;書込開始アドレス
+			LD		DE,8000H	;書込終了アドレス+1
+
+			CALL	WRTRAM		;RAMへ書込みに切り替え
+LOP0:		LD		A,L
+			LD		(HL),A		;RAM書込
+			INC		HL			;書込開始アドレス+1
+			PUSH	HL
+			AND		A
+			SBC		HL,DE		;書込開始アドレスが書込終了アドレス以下ならループ
+			POP		HL
+			JR		NZ,LOP0
+
+;******** RAM CHECK START **************
 			LD		HL,0000H	;CHECK開始アドレス
 			LD		DE,8000H	;CHECK終了アドレス+1
 			
 LOP1:		CALL	MONCLF		;改行
 			CALL	MONDHL		;CHECKアドレス表示
+			CALL	MONSPC		;空白
+
+			LD		A,L
+			CALL	PRINTA		;書込んだはずのDATAを表示
+			CALL	CHGRAM		;RAMへ切り替え
+			LD		A,(HL)		;RAM読込
+			CALL	CHGROM		;ROMへ切り替え
+			CALL	PRINTA		;RAMから読み出したDATAを表示
+			CP		L	  		;読込DATA比較
+			JR		NZ,ERR		;一致しなければERR
+			
 			CALL	MONSPC		;空白
 
 			LD		A,55H		;書込DATA
@@ -53,6 +79,13 @@ MSG_ERR:	DB		'RAM ERROR!',0DH,0AH,00H
 CHGRAM:							;RAMへ切り替え
 			PUSH	AF
 			LD		A,11H
+			OUT		(0E2H),A
+			POP		AF
+			RET
+
+WRTRAM:							;RAMへ書き込み
+			PUSH	AF
+			LD		A,10H
 			OUT		(0E2H),A
 			POP		AF
 			RET
