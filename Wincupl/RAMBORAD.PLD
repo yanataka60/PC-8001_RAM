@@ -27,11 +27,12 @@ Pin  22 = WR;
 Pin  23 = RESET;
 
 /* OUTPUTS... */
+Pin  14 = ROMDS3;
 Pin  15 = CS;
 Pin  16 = WE;
 Pin  17 = LATCHRD;
 Pin  18 = LATCHWR;
-Pin  19 = ROMDS;
+Pin  19 = ROMDS012;
 
 /** Logic **/
 /* $E2 */
@@ -44,5 +45,6 @@ LATCHRD = (LATCHRD # RAMRD) & !(ROMRD # !RESET);
 LATCHWR = (LATCHWR # RAMWR) & !(ROMWR # !RESET);
 CS = !(((LATCHRD & !RD) # (LATCHWR & !WR)) & !A15 & !MREQ);
 WE = !(LATCHWR & !WR & !MREQ & !A15);
-ROMDS = !LATCHRD;
+ROMDS3 = LATCHRD;
+ROMDS012 = LATCHRD;
 
