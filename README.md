@@ -95,7 +95,7 @@
 ## 初期3基板におけるパターンカット個所
 　初期基板を修正するには基板裏面画像の赤丸で囲んだ一カ所をパターンカットしてください。
 
-![パターンカット3](https://github.com/yanataka60/PC-8001_RAM/blob/main/jpeg/CUT3.JPG)
+![パターンカット3](https://github.com/yanataka60/PC-8001_RAM/blob/main/jpeg/CUT3.jpg)
 
 ## 追記
 2025.8.31 ちくらっぺさん作8kBSRAMボードとの併用は出来ないことの追記及びRAMテストプログラムの追加。
