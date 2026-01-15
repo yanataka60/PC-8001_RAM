@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "PC-8001_RAM"
 Date "2025-08-16"
-Rev "Rev1.3"
+Rev "Rev1.4"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -442,7 +442,7 @@ LATCHWR
 Text Label 5150 1850 0    50   ~ 0
 LATCHRD
 Text Label 5200 1950 0    50   ~ 0
-~WE
+~WE-RAM
 Text Label 5200 2050 0    50   ~ 0
 ~CS
 Wire Wire Line
@@ -512,7 +512,7 @@ D7
 Text Label 9600 2200 0    50   ~ 0
 ~CS
 Text Label 9600 2500 0    50   ~ 0
-~WE
+~WE-RAM
 $Comp
 L Device:C C1
 U 1 1 68BBA942
@@ -1011,7 +1011,7 @@ D7
 Text Label 9150 5500 0    50   ~ 0
 ~CS
 Text Label 9150 5700 0    50   ~ 0
-~WE
+~WE-RAM
 $Comp
 L power:+5V #PWR07
 U 1 1 68B7EA13
