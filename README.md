@@ -25,8 +25,6 @@
 ## 回路図
 　KiCadフォルダ内のPC-8001_RAM.pdfを参照してください。
 
-#### 最新版はRev1.4であり、回路図・基板データはRev1.4に更新していますが、基板の紹介用画像には旧基板の画像を掲載している個所があります。順次更新しますのでご容赦ください。
-
 [回路図](https://github.com/yanataka60/PC-8001_RAM/blob/main/Kicad/PC-8001_RAM.pdf)
 
 ![PC-8001_RAM](https://github.com/yanataka60/PC-8001_RAM/blob/main/Kicad/PC-8001_RAM_1.jpg)
